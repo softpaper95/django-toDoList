@@ -1,0 +1,10 @@
+<a href="{% url 'home' %}"><h4>GO TO HOME</h4></a>
+<h1>TODOLIST</h1>
+{% for post in posts %}
+    <div>
+        할일({{post.id}})
+        <h2><a href="#">{{post.title}}</a><//h2>
+        <h4>todolist: {{post.text}}</h4>
+        <p>published: {{ post.created_date }}</p>
+    </div>
+{% endfor %}    

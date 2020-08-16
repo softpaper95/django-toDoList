@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <a href="{% url 'write' %}"><h4><-</a>  
+    <div class="post">
+        <h1>{{post.title}}</h1>    
+        <p>{{post.text}}</p>
+        {% if post.created_date %}
+            <div class="date">
+                {{post.created_date}}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

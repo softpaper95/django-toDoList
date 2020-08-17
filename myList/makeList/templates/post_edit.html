@@ -1,12 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>create</h1>
+    <h1>revice</h1>
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="save_btn">save</button>
-        
     </form>
     <button type="cancle" class="cancle"><a href="{% url 'write' %}">cancle</a></button>
 {% endblock %}    

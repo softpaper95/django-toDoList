@@ -6,7 +6,7 @@
     <a href="{% url 'post_new' %}"><h4>할일 추가</a>  
     {% for post in posts %}
             <div>
-                할일({{post.id}})
+                
                 <h2><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a><//h2>
             </div>
     {% endfor %}  

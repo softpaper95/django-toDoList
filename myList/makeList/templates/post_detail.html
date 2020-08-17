@@ -11,4 +11,10 @@
             </div>
         {% endif %}
     </div>
+    <div class="edit">
+        <a href="{% url 'post_edit' pk=post.pk %}">edit</a>
+    </div>
+    <div class="delete">
+        <a href="{% url 'post_delete' pk=post.pk %}">delete</a>
+    </div>
 {% endblock %}

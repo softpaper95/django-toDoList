@@ -28,3 +28,22 @@ def post_new(request):
     else:
         form = PostForm()
     return render(request, 'post_new.html', {'form': form})
+
+def post_edit(request, pk):
+    post = get_object_or_404(Post, pk=pk) #수정하고자 하는 글의 Post 모델을 instance로 가져옴(pk로 원하느 글을 찾는다.)
+    if request.method == "POST":
+        form = PostForm(request.POST, instance=post)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.created_date = timezone.now()
+            post.save()
+            return redirect('post_detail', pk=post.pk)
+    else:
+        form = PostForm(instance=post)
+    return render(request, 'post_edit.html', {'form': form})
+
+def post_delete(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    post.delete()
+    return redirect('write')
+    

@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect, get_object_or_404#있지도 않은 글(객체)를 요청하면 404에러를 띄우자!
 from django.utils import timezone
 from makeList.models import Post #객체 Post의 내용(메소드)을 가져옴
-from .forms import PostForm
+from .forms import PostForm ##
 
 
 # Create your views here.
